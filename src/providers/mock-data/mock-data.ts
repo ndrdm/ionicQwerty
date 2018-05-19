@@ -13,16 +13,16 @@ export class MockDataProvider {
   linee: Lines[]= [
 
     { id: 1,
-  name: 'linea 1',
+  name: 'Verniciatura',
   macchine: 'macchina1'
     },
     { id: 2,
-      name: 'linea 1',
+      name: 'Forno',
       macchine: 'macchina1'
     },
 
     { id: 3,
-      name: 'linea 1',
+      name: 'Pompa',
       macchine: 'macchina1'
     }
 
@@ -31,24 +31,23 @@ export class MockDataProvider {
   macchine: Macchine []= [
 
   {id: 1,
-    name: 'dea',
+    name: 'Macchina 1',
     line: 'ew',
     parametri: "temperatura"
   },
 
     {id: 2,
-      name: 'dea',
+      name: 'Macchina 2',
       line: 'ew',
       parametri: "temperatura"
     },
 
     {id: 3,
-      name: 'dea',
+      name: 'Macchina 3',
       line: 'ew',
       parametri: "temperatura"
     }
     ];
-
 
   parametri : Parametri[]= [
 
@@ -58,7 +57,7 @@ export class MockDataProvider {
     },
 
     {id: 1,
-      name: 'temperatura',
+      name: 'umidità',
       unita: '°C'
     },
 
@@ -68,7 +67,7 @@ export class MockDataProvider {
     },
 
     {id: 3,
-      name: 'quantità',
+      name: 'giri',
       unita: 'unità'
     }
 

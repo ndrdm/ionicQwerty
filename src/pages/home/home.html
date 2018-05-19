@@ -9,24 +9,18 @@
 
 
 <ion-content padding>
-  <ul *ngFor="let line of linee">
-    <li>{{line.name}}</li>
-  </ul>
-    <p></p>
+
   <ion-item>
     <ion-label>Linea</ion-label>
     <ion-select [(ngModel)]="Linea">
-      <ion-option value="1">Sezione verniciatura </ion-option>
-      <ion-option value="2">Sezione forni</ion-option>
-      <ion-option value="3">Sezione trasportatore</ion-option>
+      <ion-option  *ngFor="let line of linee" value="1">{{line.name}} </ion-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>Macchina</ion-label>
     <ion-select [(ngModel)]="Macchina">
-      <ion-option value="1">macchina 1</ion-option>
-      <ion-option value="2">macchina 2</ion-option>
+      <ion-option *ngFor="let macchina of macchine" value="1">{{macchina.name}} </ion-option>
     </ion-select>
   </ion-item>
 
@@ -34,8 +28,7 @@
   <ion-item>
     <ion-label>Params</ion-label>
     <ion-select [(ngModel)]="params" multiple="true">
-      <ion-option>Temperatura</ion-option>
-      <ion-option>Umidità</ion-option>
+      <ion-option *ngFor="let params of parametri" value="1"> {{params.name}} </ion-option>
     </ion-select>
   </ion-item>
 
