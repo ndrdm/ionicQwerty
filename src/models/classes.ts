@@ -1,14 +1,14 @@
 export class Lines {
   id: number;
   name: string;
-  macchine: Macchine[];
+  macchine: string;
 }
 
 export class Macchine {
   id: number;
   name: string;
   line: string;
-  parametri: Parametri[];
+  parametri: string;
 }
 
 export class Parametri {
