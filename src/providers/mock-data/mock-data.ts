@@ -11,12 +11,12 @@ import {Lines, Macchine, Parametri} from "../../models/classes";
 @Injectable()
 export class MockDataProvider {
 
-  lineeData: Lines[]= [
+  linee: Lines[]= [
 
     { id: 1,
   name: 'linea 1',
   macchine: 'macchina1'
-},
+    },
     { id: 2,
       name: 'linea 1',
       macchine: 'macchina1'
@@ -27,10 +27,7 @@ export class MockDataProvider {
       macchine: 'macchina1'
     }
 
-
-
-];
-
+    ];
 
   macchine: Macchine []= [
 
@@ -80,6 +77,22 @@ export class MockDataProvider {
 
   constructor(public http: HttpClient) {
     console.log('Hello ProviderDataProvider Provider');
+  }
+
+  getLinee(){
+    return this.linee;
+
+  }
+
+
+  getMacchine(){
+    return this.macchine;
+
+  }
+
+  getParametri(){
+    return this.parametri;
+
   }
 
 }

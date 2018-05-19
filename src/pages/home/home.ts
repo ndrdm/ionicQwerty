@@ -9,9 +9,12 @@ import {Lines} from "../../models/classes";
   templateUrl: 'home.html'
 })
 export class HomePage {
-  linee : Lines;
+  linee : Lines[];
+
 
   constructor(public navCtrl: NavController, private provider: MockDataProvider) {
+
+    this.linee=this.provider.getLinee()
 
   }
 
