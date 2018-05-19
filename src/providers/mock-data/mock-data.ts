@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {Lines, Macchine, Parametri} from "../../models/classes";
 
@@ -75,7 +74,7 @@ export class MockDataProvider {
 
     ]
 
-  constructor(public http: HttpClient) {
+  constructor() {
     console.log('Hello ProviderDataProvider Provider');
   }
 

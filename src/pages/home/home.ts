@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {MockDataProvider} from "../../providers/mock-data/mock-data";
-import {Input} from "@angular/compiler/src/core";
 import {Lines} from "../../models/classes";
 
 @Component({
