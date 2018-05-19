@@ -9,7 +9,10 @@
 
 
 <ion-content padding>
-  <li *ngFor="let line of linee">
+  <ul *ngFor="let line of linee">
+    <li>{{linee.name}}</li>
+    <li>{{linee.description}}</li>
+  </ul>
     <p></p>
   <ion-item>
     <ion-label>Linea</ion-label>
