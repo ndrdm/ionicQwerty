@@ -36,16 +36,14 @@ export class HomePage {
 
 
   logForm(form: NgForm) {
-
     if (form.valid) {
       this.data = [{
-        linea: form.value.linea.name,
-        macchina: form.value.macchina.name,
-        parametri: form.value.parametri.name,
+        linea: form.value.linea,
+        macchina: form.value.macchina,
+        parametri: form.value.parametri
 
       }]
     }
-    alert(this.data)
   }
 
 
