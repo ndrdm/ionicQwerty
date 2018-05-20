@@ -67,7 +67,7 @@ export class MockDataProvider {
     },
 
     {id: 3,
-      name: 'giri',
+      name: 'quantità',
       unita: 'unità'
     }
 

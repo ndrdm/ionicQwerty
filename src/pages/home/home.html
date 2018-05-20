@@ -13,14 +13,14 @@
   <ion-item>
     <ion-label>Linea</ion-label>
     <ion-select [(ngModel)]="Linea">
-      <ion-option  *ngFor="let line of linee" value="1">{{line.name}} </ion-option>
+      <ion-option  *ngFor="let line of linee, let i=index">{{line.name}} </ion-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>Macchina</ion-label>
     <ion-select [(ngModel)]="Macchina">
-      <ion-option *ngFor="let macchina of macchine" value="1">{{macchina.name}} </ion-option>
+      <ion-option *ngFor="let macchina of macchine, let i=index">{{macchina.name}}</ion-option>
     </ion-select>
   </ion-item>
 
@@ -28,7 +28,7 @@
   <ion-item>
     <ion-label>Params</ion-label>
     <ion-select [(ngModel)]="params" multiple="true">
-      <ion-option *ngFor="let params of parametri" value="1"> {{params.name}} </ion-option>
+      <ion-option *ngFor="let params of parametri, let i=index"> {{params.name}}</ion-option>
     </ion-select>
   </ion-item>
 
