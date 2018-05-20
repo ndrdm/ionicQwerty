@@ -16,3 +16,11 @@ export class Parametri {
   name: string;
   unita: string;
 }
+
+
+export class DataForm {
+  linea: string;
+  macchina: string;
+  parametri:string [];
+
+}

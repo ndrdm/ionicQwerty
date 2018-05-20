@@ -9,28 +9,34 @@
 
 
 <ion-content padding>
-
+  <form #formget="ngForm" (ngSubmit)="logForm(formget)">
   <ion-item>
     <ion-label>Linea</ion-label>
-    <ion-select [(ngModel)]="Linea">
-      <ion-option  *ngFor="let line of linee, let i=index">{{line.name}} </ion-option>
+    <ion-select [(ngModel)]="data.linea" name="linea">
+      <ion-option  *ngFor="let line of linee, let i=index" [value]=""> {{line.name}} </ion-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>Macchina</ion-label>
-    <ion-select [(ngModel)]="Macchina">
-      <ion-option *ngFor="let macchina of macchine, let i=index">{{macchina.name}}</ion-option>
+    <ion-select [(ngModel)]="data.macchina" name="macchina">
+      <ion-option *ngFor="let macchina of macchine, let i=index"> {{macchina.name}} </ion-option>
     </ion-select>
   </ion-item>
 
 
   <ion-item>
     <ion-label>Params</ion-label>
-    <ion-select [(ngModel)]="params" multiple="true">
+    <ion-select [(ngModel)]="data.parametri" multiple="true" name="parametri">
       <ion-option *ngFor="let params of parametri, let i=index"> {{params.name}}</ion-option>
     </ion-select>
   </ion-item>
+
+    <button ion-button type="submit" >Recupera i dati</button>
+  </form>
+
+    <button ion-button type="button"> Aggiungi Parametri</button>
+
 
 
 </ion-content>
