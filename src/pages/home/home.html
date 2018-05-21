@@ -27,7 +27,7 @@
 
   <ion-item>
     <ion-label>Params</ion-label>
-    <ion-select [(ngModel)]="parametri" multiple="true" name="parametri">
+    <ion-select [(ngModel)]="params" multiple="true" name="params">
       <ion-option *ngFor="let params of parametri, let i=index" [value]="params.name"> {{params.name}}</ion-option>
     </ion-select>
   </ion-item>

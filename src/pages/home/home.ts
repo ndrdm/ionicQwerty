@@ -26,11 +26,6 @@ export class HomePage {
     this.linee = this.provider.getLinee();
     this.macchine=this.provider.getMacchine();
     this.parametri=this.provider.getParametri();
-    this.data= [{
-      linea: "",
-      macchina:"",
-      parametri:[""]
-    }]
   }
 
 
@@ -40,9 +35,10 @@ export class HomePage {
       this.data = [{
         linea: form.value.linea,
         macchina: form.value.macchina,
-        parametri: form.value.parametri
-
+        parametri: form.value.params
       }]
+      alert(form.value.params)
+      alert(form.value.linea)
     }
   }
 
