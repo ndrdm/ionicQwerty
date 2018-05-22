@@ -9,10 +9,11 @@ import {NgForm} from "@angular/forms";
   templateUrl: 'home.html'
 })
 export class HomePage {
-  linee : Lines [];
-  macchine : Macchine [];
+  linee: Lines [];
+  macchine: Macchine [];
   parametri: Parametri [];
   dataForm: DataForm;
+  selectedMachines: Macchine [];
 
   data:[  {
     linea: string,
@@ -43,5 +44,10 @@ export class HomePage {
     this.linee = null;
     this.macchine = null;
     this.parametri = null;
+  }
+
+  setMachineValues(sLine) {
+    this.selectedMachines = this.macchine;
+      //this.macchine.filter(machine => machine.lineId == sLine.id);
   }
 }

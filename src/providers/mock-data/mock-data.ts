@@ -30,24 +30,48 @@ export class MockDataProvider {
 
   macchine: Macchine []= [
 
-  {id: 1,
-    name: 'Macchina 1',
-    line: 'ew',
-    parametri: "temperatura"
-  },
+    { id: 1,
+      lineId: 1,
+      name: 'Macchina 1 Vern.',
+      line: 'ew',
+      parametri: "temperatura"
+    },
 
     {id: 2,
-      name: 'Macchina 2',
+      lineId: 1,
+      name: 'Macchina 2 Vern.',
       line: 'ew',
       parametri: "temperatura"
     },
 
     {id: 3,
-      name: 'Macchina 3',
+      lineId: 2,
+      name: 'Macchina 1 Forno',
+      line: 'ew',
+      parametri: "temperatura"
+    },
+
+    {id: 4,
+      lineId: 2,
+      name: 'Macchina 2 Forno',
+      line: 'ew',
+      parametri: "temperatura"
+    },
+
+    {id: 5,
+      lineId: 3,
+      name: 'Macchina 1 Pompa',
+      line: 'ew',
+      parametri: "temperatura"
+    },
+
+    {id: 6,
+      lineId: 3,
+      name: 'Macchina 1 Pompa',
       line: 'ew',
       parametri: "temperatura"
     }
-    ];
+  ];
 
   parametri : Parametri[]= [
 

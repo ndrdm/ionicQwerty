@@ -6,6 +6,7 @@ export class Lines {
 
 export class Macchine {
   id: number;
+  lineId: number;
   name: string;
   line: string;
   parametri: string;
