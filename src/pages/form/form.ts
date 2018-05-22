@@ -12,7 +12,7 @@ import {MockDataProvider} from "../../providers/mock-data/mock-data";
   templateUrl: 'form.html',
 })
 export class FormPage {
-
+  selectedItem: any;
   lines: Line [];
   machines : Machine [];
   parameters: Parameter [];
@@ -26,7 +26,9 @@ export class FormPage {
   }]
 
 
-  constructor(public navCtrl: NavController, private provider: MockDataProvider) {
+  constructor(public navCtrl: NavController, private provider: MockDataProvider, public navParams: NavParams ) {
+    this.selectedItem = navParams.get('item');
+
     this.lines = this.provider.getLinee();
     this.machines = this.provider.getMacchine();
     this.parameters = this.provider.getParametri();

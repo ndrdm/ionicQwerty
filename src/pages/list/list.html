@@ -1,11 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Braford impianti</ion-title>
+  </ion-navbar>
+</ion-header>
 
-<ion-content>
-
-    <ion-item-group>
-      <ion-grid>
-
+<ion-content padding="1px">
+  <ion-item-group>
+      <ion-list>
         <ion-row style="background-color: #488aff; color: #f4f4f4" >
-
           <ion-col>Linea</ion-col>
           <ion-col>Macchina</ion-col>
           <ion-col>Parametri</ion-col>
@@ -17,7 +22,19 @@
       <ion-col>{{data.parameter}}</ion-col>
         <ion-col> <button type="button" (click)="removeItem(i)"> X </button></ion-col>
       </ion-row>
-      </ion-grid>
+      </ion-list>
       <button ion-button type="submit">Recupera i dati</button>
     </ion-item-group>
+
+  <ion-list>
+    <button ion-item *ngFor="let data of dataMock; let i=index" (click)="itemTapped($event, item)">
+      <ion-col>{{data.line}}</ion-col>
+      <ion-col >{{data.machine}}</ion-col>
+      <ion-col>{{data.parameter}}</ion-col>
+
+    </button>
+  </ion-list>
+
+
+
 </ion-content>

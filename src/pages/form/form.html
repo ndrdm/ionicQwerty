@@ -1,4 +1,11 @@
-
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Braford impianti</ion-title>
+  </ion-navbar>
+</ion-header>
 
 
 <ion-content padding>
@@ -12,7 +19,7 @@
 
     <ion-item>
 
-      <ion-label class="prova">Macchina</ion-label>
+      <ion-label>Macchina</ion-label>
       <ion-select [(ngModel)]="macchina" name="macchina">
         <ion-option *ngFor="let macchina of machines, let i=index" [value]="macchina.name"> {{macchina.name}} </ion-option>
       </ion-select>
