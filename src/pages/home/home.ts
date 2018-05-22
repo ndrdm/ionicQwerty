@@ -20,15 +20,11 @@ export class HomePage {
     parametri: string[]
   }]
 
-
-
   constructor(public navCtrl: NavController, private provider: MockDataProvider) {
     this.linee = this.provider.getLinee();
-    this.macchine=this.provider.getMacchine();
-    this.parametri=this.provider.getParametri();
+    this.macchine = this.provider.getMacchine();
+    this.parametri = this.provider.getParametri();
   }
-
-
 
   logForm(form: NgForm) {
     if (form.valid) {
@@ -37,13 +33,15 @@ export class HomePage {
         macchina: form.value.macchina,
         parametri: form.value.params
       }]
-      alert(form.value.params)
       alert(form.value.linea)
+      alert(form.value.macchina)
+      alert(form.value.params)
     }
   }
 
-
-
-
-
+  resetConverter() {
+    this.linee = null;
+    this.macchine = null;
+    this.parametri = null;
+  }
 }

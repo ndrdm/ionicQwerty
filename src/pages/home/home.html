@@ -13,7 +13,7 @@
   <ion-item>
     <ion-label>Linea</ion-label>
     <ion-select [(ngModel)]="linea" name="linea">
-      <ion-option  *ngFor="let line of linee, let i=index" [value]="line.name"> {{line.name}} </ion-option>
+      <ion-option *ngFor="let line of linee, let i=index" [value]="line.name"> {{line.name}} </ion-option>
     </ion-select>
   </ion-item>
 
@@ -32,11 +32,10 @@
     </ion-select>
   </ion-item>
 
-    <button ion-button type="submit" >Recupera i dati</button>
+    <button ion-button type="submit">Recupera i dati</button>
+
   </form>
 
-    <button ion-button type="button"> Aggiungi Parametri</button>
-
-
+    <button ion-button type="button" (click)="resetConverter()"> Aggiungi Parametri</button>
 
 </ion-content>
