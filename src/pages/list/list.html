@@ -1,0 +1,23 @@
+
+<ion-content>
+
+    <ion-item-group>
+      <ion-grid>
+
+        <ion-row style="background-color: #488aff; color: #f4f4f4" >
+
+          <ion-col>Linea</ion-col>
+          <ion-col>Macchina</ion-col>
+          <ion-col>Parametri</ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+      <ion-row *ngFor="let data of dataMock; let i=index">
+      <ion-col>{{data.line}}</ion-col>
+      <ion-col >{{data.machine}}</ion-col>
+      <ion-col>{{data.parameter}}</ion-col>
+        <ion-col> <button type="button" (click)="removeItem(i)"> X </button></ion-col>
+      </ion-row>
+      </ion-grid>
+      <button ion-button type="submit">Recupera i dati</button>
+    </ion-item-group>
+</ion-content>

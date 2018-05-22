@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Line, Machine, Parameter} from "../../models/classes";
+import {DataForm, Line, Machine, Parameter} from "../../models/classes";
 
 /*
   Generated class for the ProviderDataProvider provider.
@@ -98,6 +98,26 @@ export class MockDataProvider {
 
     ]
 
+
+
+
+  dataForm : DataForm []= [
+
+    {
+      line: 'prova1',
+      machine: '°C',
+      parameter:["1", "2"]
+    },
+
+
+    {
+      line: 'prova2',
+      machine: '°C',
+      parameter:["1", "2"]
+    }
+
+  ]
+
   constructor() {
     console.log('Hello ProviderDataProvider Provider');
   }
@@ -116,6 +136,10 @@ export class MockDataProvider {
   getParametri(){
     return this.parameters;
 
+  }
+
+  getData(){
+    return this.dataForm
   }
 
 }

@@ -20,8 +20,8 @@ export class Parameter {
 
 
 export class DataForm {
-  linea: string;
-  macchina: string;
+  line: string;
+  machine: string;
   parameter: string [];
 
 }
