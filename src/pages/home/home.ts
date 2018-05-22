@@ -21,15 +21,11 @@ export class HomePage {
     parameter: string[]
   }]
 
-
-
   constructor(public navCtrl: NavController, private provider: MockDataProvider) {
-    this.lines = this.provider.getLinee();
-    this.machines = this.provider.getMacchine();
+    this.linee = this.provider.getLinee();
+    this.macchine = this.provider.getMacchine();
     this.parametri = this.provider.getParametri();
   }
-
-
 
   logForm(form: NgForm) {
     if (form.valid) {
@@ -38,13 +34,14 @@ export class HomePage {
         machine: form.value.machine,
         parameters: form.value.params
       }]
-      alert(form.value.params)
       alert(form.value.linea)
+      alert(form.value.macchina)
+      alert(form.value.params)
     }
   }
 
-  setValues(sLine) {
-    this.selectedLines = this.machines.filter(machine => machine.lineId == sLine.id)
-  }
+
+
+
 
 }
