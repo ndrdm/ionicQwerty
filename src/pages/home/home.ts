@@ -1,7 +1,7 @@
 import {Component, EventEmitter} from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {MockDataProvider} from "../../providers/mock-data/mock-data";
-import {DataForm, Lines, Macchine, Parametri} from "../../models/classes";
+import {DataForm, Line, Machine, Parameter} from "../../models/classes";
 import {NgForm} from "@angular/forms";
 
 @Component({
@@ -9,23 +9,24 @@ import {NgForm} from "@angular/forms";
   templateUrl: 'home.html'
 })
 export class HomePage {
-  linee : Lines [];
-  macchine : Macchine [];
-  parametri: Parametri [];
+  lines: Line [];
+  machines : Machine [];
+  parametri: Parameter [];
   dataForm: DataForm;
+  selectedLines: Machine;
 
   data:[  {
-    linea: string,
-    macchina: string,
-    parametri: string[]
+    line: string,
+    machine: string,
+    parameter: string[]
   }]
 
 
 
   constructor(public navCtrl: NavController, private provider: MockDataProvider) {
-    this.linee = this.provider.getLinee();
-    this.macchine=this.provider.getMacchine();
-    this.parametri=this.provider.getParametri();
+    this.lines = this.provider.getLinee();
+    this.machines = this.provider.getMacchine();
+    this.parametri = this.provider.getParametri();
   }
 
 
@@ -33,17 +34,17 @@ export class HomePage {
   logForm(form: NgForm) {
     if (form.valid) {
       this.data = [{
-        linea: form.value.linea,
-        macchina: form.value.macchina,
-        parametri: form.value.params
+        line: form.value.line,
+        machine: form.value.machine,
+        parameters: form.value.params
       }]
       alert(form.value.params)
       alert(form.value.linea)
     }
   }
 
-
-
-
+  setValues(sLine) {
+    this.selectedLines = this.machines.filter(machine => machine.lineId == sLine.id)
+  }
 
 }

@@ -1,26 +1,27 @@
-export class Lines {
+export class Line {
   id: number;
   name: string;
-  macchine: string;
+  machine: string;
 }
 
-export class Macchine {
+export class Machine {
   id: number;
+  lineId: number;
   name: string;
   line: string;
-  parametri: string;
+  parameter: string;
 }
 
-export class Parametri {
+export class Parameter {
   id: number;
   name: string;
-  unita: string;
+  unit: string;
 }
 
 
 export class DataForm {
   linea: string;
   macchina: string;
-  parametri:string [];
+  parameter: string [];
 
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Lines, Macchine, Parametri} from "../../models/classes";
+import {Line, Machine, Parameter} from "../../models/classes";
 
 /*
   Generated class for the ProviderDataProvider provider.
@@ -10,65 +10,90 @@ import {Lines, Macchine, Parametri} from "../../models/classes";
 @Injectable()
 export class MockDataProvider {
 
-  linee: Lines[]= [
+  lines: Line []= [
 
     { id: 1,
   name: 'Verniciatura',
-  macchine: 'macchina1'
+  machine: 'macchina1'
     },
     { id: 2,
       name: 'Forno',
-      macchine: 'macchina1'
+      machine: 'macchina1'
     },
 
     { id: 3,
       name: 'Pompa',
-      macchine: 'macchina1'
+      machine: 'macchina1'
     }
 
     ];
 
-  macchine: Macchine []= [
+  machines: Machine []= [
 
-  {id: 1,
-    name: 'Macchina 1',
-    line: 'ew',
-    parametri: "temperatura"
-  },
+    { id: 1,
+      lineId: 1,
+      name: 'Macchina 1 Vern.',
+      line: 'ew',
+      parameter: "temperatura"
+    },
 
     {id: 2,
-      name: 'Macchina 2',
+      lineId: 1,
+      name: 'Macchina 2 Vern.',
       line: 'ew',
-      parametri: "temperatura"
+      parameter: "temperatura"
     },
 
     {id: 3,
-      name: 'Macchina 3',
+      lineId: 2,
+      name: 'Macchina 1 Forno',
       line: 'ew',
-      parametri: "temperatura"
-    }
-    ];
+      parameter: "temperatura"
+    },
 
-  parametri : Parametri[]= [
+    {id: 4,
+      lineId: 2,
+      name: 'Macchina 2 Forno',
+      line: 'ew',
+      parameter: "temperatura"
+    },
+
+    {id: 5,
+      lineId: 3,
+      name: 'Macchina 1 Pompa',
+      line: 'ew',
+      parameter: "temperatura"
+    },
+
+    {id: 6,
+      lineId: 3,
+      name: 'Macchina 1 Pompa',
+      line: 'ew',
+      parameter: "temperatura"
+    }
+  ];
+
+
+  parameters : Parameter []= [
 
     {id: 1,
       name: 'temperatura',
-      unita: '°C'
+      unit: '°C'
     },
 
     {id: 1,
       name: 'umidità',
-      unita: '°C'
+      unit: '°C'
     },
 
     {id: 2,
       name: 'consumo',
-      unita: 'ampere'
+      unit: 'ampere'
     },
 
     {id: 3,
       name: 'quantità',
-      unita: 'unità'
+      unit: 'unità'
     }
 
     ]
@@ -78,18 +103,18 @@ export class MockDataProvider {
   }
 
   getLinee(){
-    return this.linee;
+    return this.lines;
 
   }
 
 
   getMacchine(){
-    return this.macchine;
+    return this.machines;
 
   }
 
   getParametri(){
-    return this.parametri;
+    return this.parameters;
 
   }
 
