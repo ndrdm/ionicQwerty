@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Sistema di Monitoraggio impianto Bradford</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form #formget="ngForm" (ngSubmit)="logForm(formget)">
+  <ion-item>
+    <ion-label>Linea</ion-label>
+    <ion-select [(ngModel)]="linea" name="linea">
+      <ion-option *ngFor="let line of linee, let i=index" [value]="line.name"> {{line.name}} </ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Macchina</ion-label>
+    <ion-select [(ngModel)]="macchina" name="macchina">
+      <ion-option *ngFor="let macchina of macchine, let i=index" [value]="macchina.name"> {{macchina.name}} </ion-option>
+    </ion-select>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Params</ion-label>
+    <ion-select [(ngModel)]="params" multiple="true" name="params">
+      <ion-option *ngFor="let params of parametri, let i=index" [value]="params.name"> {{params.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+    <button ion-button type="submit">Recupera i dati</button>
+
+  </form>
+
+    <button ion-button type="button" (click)="resetConverter()"> Aggiungi Parametri</button>
+
+</ion-content>
