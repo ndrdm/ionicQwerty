@@ -14,6 +14,7 @@ export class HomePage {
   parametri: Parametri [];
   dataForm: DataForm;
   selectedMachines: Macchine [];
+  myIndex: number = 0;
 
   data:[  {
     linea: string,
@@ -46,8 +47,16 @@ export class HomePage {
     this.parametri = null;
   }
 
-  setMachineValues(sLine) {
-    this.selectedMachines = this.macchine;
-      //this.macchine.filter(machine => machine.lineId == sLine.id);
+  setMachineValues() { //machine =>  machine.lineId == indexLine
+    for(let i = 0; i<this.macchine.length; i++){
+      if(this.macchine[i].id == this.myIndex){
+        console.log("OK FUNZIONA");
+      }else{
+        console.log("OK NON FUNZIONA");
+      }
+    }
+    /*this.selectedMachines = this.macchine.filter( function (macchina) {
+      return macchina.lineId == indexLine;
+    });*/
   }
 }

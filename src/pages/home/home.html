@@ -12,15 +12,15 @@
   <form #formget="ngForm" (ngSubmit)="logForm(formget)">
   <ion-item>
     <ion-label>Linea</ion-label>
-    <ion-select [(ngModel)]="linea" name="linea" (ionSelect)="setMachineValues(line)">
-      <ion-option *ngFor="let line of linee, let i=index" [value]="line.name"> {{line.name}} </ion-option>
+    <ion-select [(ngModel)]="linea" name="linea" (ionChange)="setMachineValues()">
+      <ion-option *ngFor="let line of linee, let i = index" [value]="line.name" (ionSelect)="myIndex = i"> {{line.name + " " + i}}</ion-option>
     </ion-select>
   </ion-item>
 
   <ion-item>
     <ion-label>Macchina</ion-label>
     <ion-select [(ngModel)]="macchina" name="macchina">
-      <ion-option *ngFor="let macchina of selectedMachines, let i=index" [value]="macchina.name"> {{macchina.name}} </ion-option>
+      <ion-option *ngFor="let macchina of selectedMachines, let i = index" [value]="macchina.name"> {{macchina.name}} </ion-option>
     </ion-select>
   </ion-item>
 
@@ -28,7 +28,7 @@
   <ion-item>
     <ion-label>Params</ion-label>
     <ion-select [(ngModel)]="params" multiple="true" name="params">
-      <ion-option *ngFor="let params of parametri, let i=index" [value]="params.name"> {{params.name}}</ion-option>
+      <ion-option *ngFor="let params of parametri, let i = index" [value]="params.name"> {{params.name}} </ion-option>
     </ion-select>
   </ion-item>
 
