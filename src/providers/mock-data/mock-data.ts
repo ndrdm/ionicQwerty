@@ -122,6 +122,12 @@ export class MockDataProvider {
     console.log('Hello ProviderDataProvider Provider');
   }
 
+
+  addData(data: DataForm){
+    this.dataForm.push(data)
+
+  }
+
   getLinee(){
     return this.lines;
 
@@ -143,3 +149,7 @@ export class MockDataProvider {
   }
 
 }
+
+
+
+

@@ -18,13 +18,11 @@
     </ion-item>
 
     <ion-item>
-
       <ion-label>Macchina</ion-label>
       <ion-select [(ngModel)]="macchina" name="macchina">
         <ion-option *ngFor="let macchina of machines, let i=index" [value]="macchina.name"> {{macchina.name}} </ion-option>
       </ion-select>
     </ion-item>
-
 
     <ion-item>
       <ion-label>Params</ion-label>
@@ -33,8 +31,8 @@
       </ion-select>
     </ion-item>
 
-    <div>
+    <ion-content padding="1px">
     <button ion-button type="button" (click)="addParams()"> Aggiungi Parametri</button>
-    </div>
+    </ion-content>
   </form>
 </ion-content>

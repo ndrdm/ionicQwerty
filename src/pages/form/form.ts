@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {NgForm} from "@angular/forms";
 import {DataForm, Line, Machine, Parameter} from "../../models/classes";
@@ -16,19 +16,12 @@ export class FormPage {
   lines: Line [];
   machines : Machine [];
   parameters: Parameter [];
-  dataForm: DataForm;
   selectedLines: Machine;
 
-  data:[  {
-    line: string,
-    machine: string,
-    parameter: string[]
-  }]
 
-
+  @Output() newItem = new EventEmitter<DataForm>()
   constructor(public navCtrl: NavController, private provider: MockDataProvider, public navParams: NavParams ) {
     this.selectedItem = navParams.get('item');
-
     this.lines = this.provider.getLinee();
     this.machines = this.provider.getMacchine();
     this.parameters = this.provider.getParametri();
@@ -39,17 +32,24 @@ export class FormPage {
   }
 
 
+
+
   logForm(form: NgForm) {
     if (form.valid) {
-      this.data = [{
+      let newData = {
         line: form.value.line,
         machine: form.value.machine,
         parameter: form.value.params
-      }]
+      }
+
+
       alert(form.value.linea)
       alert(form.value.macchina)
       alert(form.value.params)
+      this.newItem.emit(newData)
+
     }
+
   }
 
 

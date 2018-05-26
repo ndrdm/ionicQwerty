@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Braford impianti</ion-title>
+    <ion-title></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -25,15 +25,6 @@
       </ion-list>
       <button ion-button type="submit">Recupera i dati</button>
     </ion-item-group>
-
-  <ion-list>
-    <button ion-item *ngFor="let data of dataMock; let i=index" (click)="itemTapped($event, item)">
-      <ion-col>{{data.line}}</ion-col>
-      <ion-col >{{data.machine}}</ion-col>
-      <ion-col>{{data.parameter}}</ion-col>
-
-    </button>
-  </ion-list>
 
 
 
