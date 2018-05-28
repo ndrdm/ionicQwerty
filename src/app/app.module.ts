@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { FormPage } from '../pages/form/form';
 import { MockDataProvider } from '../providers/mock-data/mock-data';
 import {ListPage} from "../pages/list/list";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {ListPage} from "../pages/list/list";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

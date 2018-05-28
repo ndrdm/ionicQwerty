@@ -1,12 +1,12 @@
 <ion-content padding="10px">
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Sistema di Monitoraggio impianto industriale</ion-title>
-  </ion-navbar>
-</ion-header>
+  <ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Sistema di Monitoraggio impianto industriale</ion-title>
+    </ion-navbar>
+  </ion-header>
   <page-form padding="1px"></page-form>
-  <page-list padding="1px"></page-list>
+  <page-list [listData]="listData"  padding="1px"></page-list>
 </ion-content>

@@ -9,7 +9,7 @@
 
 
 <ion-content padding>
-  <form #formget="ngForm" (ngSubmit)="logForm(formget)">
+  <form #formget="ngForm" (ngSubmit)="addForm(formget)">
     <ion-item>
       <ion-label>Linea</ion-label>
       <ion-select [(ngModel)]="linea" name="linea">
@@ -32,7 +32,7 @@
     </ion-item>
 
     <ion-content padding="1px">
-    <button ion-button type="button" (click)="addParams()"> Aggiungi Parametri</button>
+    <button ion-button type="submit"> Aggiungi Parametri</button>
     </ion-content>
   </form>
 </ion-content>

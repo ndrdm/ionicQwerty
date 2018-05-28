@@ -17,38 +17,48 @@ export class FormPage {
   machines : Machine [];
   parameters: Parameter [];
   selectedLines: Machine;
+  data:DataForm;
+  dataMock: DataForm[];
+
 
 
   @Output() newItem = new EventEmitter<DataForm>()
+
   constructor(public navCtrl: NavController, private provider: MockDataProvider, public navParams: NavParams ) {
     this.selectedItem = navParams.get('item');
     this.lines = this.provider.getLinee();
     this.machines = this.provider.getMacchine();
     this.parameters = this.provider.getParametri();
+    this.dataMock=this.provider.getData();
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormPage');
   }
 
+  addNewItem(item: DataForm){
+    alert(item.machine)
+    this.dataMock.push(item)
+    //localStorage.setItem("key", JSON.stringify(this.itemCart))
+  }
 
-
-
-  logForm(form: NgForm) {
+  addForm(form: NgForm) {
     if (form.valid) {
       let newData = {
-        line: form.value.line,
-        machine: form.value.machine,
+        line: form.value.linea,
+        machine: form.value.macchina,
         parameter: form.value.params
       }
-
 
       alert(form.value.linea)
       alert(form.value.macchina)
       alert(form.value.params)
-      this.newItem.emit(newData)
+      this.dataMock.push(newData)
+
 
     }
+
 
   }
 

@@ -99,8 +99,6 @@ export class MockDataProvider {
     ]
 
 
-
-
   dataForm : DataForm []= [
 
     {
@@ -123,7 +121,7 @@ export class MockDataProvider {
   }
 
 
-  addData(data: DataForm){
+  addData(    data: DataForm){
     this.dataForm.push(data)
 
   }
