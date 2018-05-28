@@ -7,6 +7,7 @@ import {FormPage} from "../form/form";
 import  {ListPage} from "../list/list";
 import {ViewChild } from '@angular/core';
 import { Content } from 'ionic-angular';
+import { RestProvider } from '../../providers/rest/rest';
 
 @IonicPage()
 @Component({

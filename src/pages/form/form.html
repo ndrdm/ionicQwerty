@@ -31,8 +31,31 @@
       </ion-select>
     </ion-item>
 
-    <ion-content padding="1px">
-    <button ion-button type="submit"> Aggiungi Parametri</button>
-    </ion-content>
+
+    <ion-item>
+        <ion-label>Data di inizio</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY"   name="startDate" placeholder="data di inizio"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Ora di inizio </ion-label>
+          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"   placeholder="ora di inizio" name="startTime"></ion-datetime>
+      </ion-item>
+
+    <ion-item>
+      <ion-label>Data di fine</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY"  placeholder="data di fine" name="endDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ora di fine</ion-label>
+        <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" placeholder="ora di fine" name="endTime"></ion-datetime>
+    </ion-item>
+
+
+    <ion-item>
+    <button ion-button block type="submit"> Aggiungi Parametri</button>
+    </ion-item>
+
   </form>
 </ion-content>

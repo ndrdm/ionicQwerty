@@ -103,15 +103,15 @@ export class MockDataProvider {
 
     {
       line: 'prova1',
-      machine: '°C',
+      machine: 'Forno',
       parameter:["1", "2"]
     },
 
 
     {
       line: 'prova2',
-      machine: '°C',
-      parameter:["1", "2"]
+      machine: 'Pompa',
+      parameter:["temperatura", "plojec uolc"]
     }
 
   ]

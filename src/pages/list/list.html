@@ -8,24 +8,16 @@
 </ion-header>
 
 <ion-content padding="1px">
-  <ion-item-group>
-      <ion-list>
-        <ion-row style="background-color: #488aff; color: #f4f4f4" >
-          <ion-col>Linea</ion-col>
-          <ion-col>Macchina</ion-col>
-          <ion-col>Parametri</ion-col>
-          <ion-col></ion-col>
-        </ion-row>
-      <ion-row *ngFor="let data of dataMock; let i=index">
-      <ion-col>{{data.line}}</ion-col>
-      <ion-col >{{data.machine}}</ion-col>
-      <ion-col>{{data.parameter}}</ion-col>
-        <ion-col> <button type="button" (click)="removeItem(i)"> X </button></ion-col>
-      </ion-row>
-      </ion-list>
-      <button ion-button type="submit" (click)="getParams()">Recupera i dati</button>
-    </ion-item-group>
-
-
-
+  <ion-item *ngFor="let data of dataMock; let i=index" (click)="deleteConfirm(i)">
+    <h2>Linea: {{data.line}}</h2>
+    <p>Macchina: {{data.machine}}</p>
+    <p>Parametri: {{data.parameter}}</p>
+  </ion-item>
+  <ion-item *ngIf="dataMock.length==0">
+    <h2>La lista è vuota</h2>
+  </ion-item>
+  <ion-item *ngIf="dataMock.length!=0">
+    <button ion-button block (click)="sendQuery(dataMock)"> Scarica i dati </button>
+    <button ion-button class="button-md-danger" block (click)="deleteAll()"> Svuota lista </button>
+  </ion-item>
 </ion-content>
