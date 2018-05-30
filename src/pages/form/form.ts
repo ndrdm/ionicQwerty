@@ -20,7 +20,8 @@ export class FormPage {
   selectedLines: Machine;
   data:DataForm;
   dataMock: DataForm[];
-  nowDate: Date;
+  nowTime: string;
+  nowDate: string;
 
 
   /*public event = {
@@ -33,14 +34,15 @@ export class FormPage {
   @Output() newItem = new EventEmitter<DataForm>()
 
   constructor(public navCtrl: NavController, private provider: MockDataProvider, public navParams: NavParams, public toastCtrl: ToastController ) {
-    this.nowDate = new Date()
-    let dataForm = moment(this.nowDate).format('DD MM YYYY') //('DD/MM/YYYY, h:mm a')
 
     this.selectedItem = navParams.get('item');
     this.lines = this.provider.getLinee();
     this.machines = this.provider.getMacchine();
     this.parameters = this.provider.getParametri();
     this.dataMock=this.provider.getData();
+
+    this.nowTime=moment().format('h:mm:ss')
+    this.nowDate=moment().format('DD/MM/YYYY')
 
   }
 
@@ -55,12 +57,53 @@ export class FormPage {
   }
 
   addForm(form: NgForm) {
+    let startDate;
+    let startTime;
+    let endDate;
+    let endTime;
+
+
+
     if (form.value.linea!=undefined && form.value.macchina!=undefined && form.value.params!=undefined) {
+
+      if(form.value.startDate==undefined){
+        startDate=this.nowDate;
+      }
+      else {startDate=moment(form.value.startDate).format('DD/MM/YYYY')}
+
+
+      if (form.value.startTime==undefined){
+        startTime=this.nowTime;
+      }
+      else {startTime=form.value.startTime;}
+
+
+      if (form.value.endDate==undefined){
+        endDate=moment(form.value.endDate).format('DD/MM/YYYY');
+      }
+      else {endDate=form.value.endDate;}
+
+
+      if (form.value.endTime==undefined){
+        endTime=this.nowTime;
+      }
+      else {endTime=form.value.endTime;}
+
+
+
+      //moment(form.value.startTime).format('RFC3339')
+
       let newData = {
         line: form.value.linea,
         machine: form.value.macchina,
-        parameter: form.value.params
+        parameter: form.value.params,
+        startDate:startDate,
+        startTime:startTime,
+        endDate:endDate,
+        endTime: endTime
+
       }
+
       this.dataMock.push(newData)
       form.reset()
       let toast = this.toastCtrl.create({
@@ -81,10 +124,6 @@ export class FormPage {
 
 
     }
-
-
-
-
 
 
 }

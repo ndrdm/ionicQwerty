@@ -42,11 +42,11 @@ export class ListPage {
 
   deleteConfirm(index) {
     let confirm = this.alertCtrl.create({
-      title: "Cancellare l'elemento dalla lista?",
-      message: 'Rimuovi',
+      title: "Delete item?",
+      message: 'Delete',
       buttons: [
         {
-          text: 'Annulla',
+          text: 'Cancel',
           handler: () => {
             console.log('Disagree clicked');
           }
@@ -66,17 +66,17 @@ export class ListPage {
 
   deleteAll(){
     let confirm = this.alertCtrl.create({
-      title: "Svuotare la lista?",
+      title: "Discard all?",
       message: '',
       buttons: [
         {
-          text: 'Annulla',
+          text: 'Cancel',
           handler: () => {
             console.log('Disagree clicked');
           }
         },
         {
-          text: 'Ok',
+          text: 'OK',
           handler: () => {
             for (let p = this.dataMock.length; p >= 0; p--) {
               this.dataMock.splice(p, 1);

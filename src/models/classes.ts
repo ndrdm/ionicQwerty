@@ -23,6 +23,10 @@ export class DataForm {
   line: string;
   machine: string;
   parameter: string [];
+  startDate: string;
+  startTime: string;
+  endDate: string;
+  endTime: string;
 
 }
 
