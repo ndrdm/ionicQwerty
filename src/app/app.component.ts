@@ -30,7 +30,7 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Form', component: FormPage},
-      { title: 'Parmams List', component: ListPage },
+      { title: 'Request List', component: ListPage },
       { title: 'Logout', component: HomePage }
     ];
   }

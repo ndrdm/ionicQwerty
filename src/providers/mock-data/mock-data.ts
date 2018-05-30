@@ -125,6 +125,8 @@ export class MockDataProvider {
 
   ]
 
+
+
   constructor() {
     console.log('Hello ProviderDataProvider Provider');
   }
@@ -154,6 +156,11 @@ export class MockDataProvider {
   getData(){
     return this.dataForm
   }
+
+  getSelectedData(){
+
+  }
+
 
 }
 
