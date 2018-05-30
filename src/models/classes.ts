@@ -22,7 +22,7 @@ export class Parameter {
 export class DataForm {
   line: string;
   machine: string;
-  parameter: string [];
+  parameter: string[]
   startDate: string;
   startTime: string;
   endDate: string;

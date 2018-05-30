@@ -104,14 +104,23 @@ export class MockDataProvider {
     {
       line: 'prova1',
       machine: 'Forno',
-      parameter:["1", "2"]
+      parameter:["1", "2"],
+      startDate:"08/11/2017",
+      startTime: "04:20:00",
+      endDate: "08/11/2017",
+      endTime:  "04:20:00",
     },
 
 
     {
       line: 'prova2',
       machine: 'Pompa',
-      parameter:["temperatura", "pressione"]
+      parameter:["temperatura", "pressione"],
+      startDate:"08/11/2017" ,
+      startTime: "04:20:00",
+      endDate: "08/11/2017",
+      endTime:  "04:20:00"
+
     }
 
   ]
