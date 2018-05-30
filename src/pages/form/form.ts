@@ -32,8 +32,6 @@ export class FormPage {
 
   @Output() newItem = new EventEmitter<DataForm>()
 
-
-
   constructor(public navCtrl: NavController, private provider: MockDataProvider, public navParams: NavParams, public toastCtrl: ToastController ) {
     this.nowDate = new Date()
     let dataForm = moment(this.nowDate).format('DD MM YYYY') //('DD/MM/YYYY, h:mm a')

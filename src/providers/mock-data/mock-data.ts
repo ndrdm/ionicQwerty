@@ -111,7 +111,7 @@ export class MockDataProvider {
     {
       line: 'prova2',
       machine: 'Pompa',
-      parameter:["temperatura", "plojec uolc"]
+      parameter:["temperatura", "pressione"]
     }
 
   ]

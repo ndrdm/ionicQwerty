@@ -27,7 +27,6 @@ export class MyApp {
     public splashScreen: SplashScreen
   ) {
     this.initializeApp();
-
     // set our app's pages
     this.pages = [
       { title: 'Form', component: FormPage},
