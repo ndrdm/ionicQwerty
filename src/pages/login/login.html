@@ -9,33 +9,32 @@
 
 
 <ion-content padding>
-  <form #formget="ngForm" (ngSubmit)="logForm(formget)">
-  <ion-item>
-    <ion-label>Linea</ion-label>
-    <ion-select [(ngModel)]="linea" name="linea">
-      <ion-option *ngFor="let line of linee, let i=index" [value]="line.name"> {{line.name}} </ion-option>
-    </ion-select>
-  </ion-item>
 
-  <ion-item>
-    <ion-label>Macchina</ion-label>
-    <ion-select [(ngModel)]="macchina" name="macchina">
-      <ion-option *ngFor="let macchina of macchine, let i=index" [value]="macchina.name"> {{macchina.name}} </ion-option>
-    </ion-select>
-  </ion-item>
+  <div class="login-box">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
 
+            <ion-item>
+              <ion-input type="text" placeholder="Email" name="email" [(ngModel)]="registerCredentials.email" required></ion-input>
+            </ion-item>
 
-  <ion-item>
-    <ion-label>Params</ion-label>
-    <ion-select [(ngModel)]="params" multiple="true" name="params">
-      <ion-option *ngFor="let params of parametri, let i=index" [value]="params.name"> {{params.name}}</ion-option>
-    </ion-select>
-  </ion-item>
+            <ion-item>
+              <ion-input type="password" placeholder="Password" name="password" [(ngModel)]="registerCredentials.password" required></ion-input>
+            </ion-item>
 
-    <button ion-button type="submit">Recupera i dati</button>
+          </ion-list>
+        </ion-col>
+      </ion-row>
 
-  </form>
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Login</button>
+          <button ion-button class="register-btn" block clear (click)="createAccount()">Create New Account</button>
+        </ion-col>
+      </ion-row>
 
-    <button ion-button type="button" (click)="resetConverter()"> Aggiungi Parametri</button>
-
+    </form>
+  </div>
 </ion-content>

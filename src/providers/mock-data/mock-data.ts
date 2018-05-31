@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Lines, Macchine, Parametri} from "../../models/classes";
+import {Lines, Macchine, Parametri, User} from "../../models/classes";
 
 /*
   Generated class for the ProviderDataProvider provider.
@@ -72,6 +72,25 @@ export class MockDataProvider {
     }
 
     ]
+
+  users : User[]= [
+
+    {id: 1,
+      email: 'jacaz.marco@ionic.com',
+      password: 1234
+    },
+
+    {id: 2,
+      email: 'piasentin.stefano@ionic.com',
+      password: 5678
+    },
+
+    {id: 3,
+      email: 'adamo.andrea@ionic.com',
+      password: 1357
+    }
+
+  ]
 
   constructor() {
     console.log('Hello ProviderDataProvider Provider');
