@@ -1,47 +1,60 @@
 import {Component, EventEmitter} from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {AuthService} from "../../models/classes";
+import {AlertController, Loading, LoadingController, NavController} from "ionic-angular";
 import {MockDataProvider} from "../../providers/mock-data/mock-data";
-import {DataForm, Lines, Macchine, Parametri} from "../../models/classes";
-import {NgForm} from "@angular/forms";
+
+import { HomePage } from "../../pages/home/home";
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-login',
+  templateUrl: 'login.html'
 })
-export class HomePage {
-  linee : Lines [];
-  macchine : Macchine [];
-  parametri: Parametri [];
-  dataForm: DataForm;
+export class Login {
 
-  data:[  {
-    linea: string,
-    macchina: string,
-    parametri: string[]
-  }]
+  loading: Loading;
 
-  constructor(public navCtrl: NavController, private provider: MockDataProvider) {
-    this.linee = this.provider.getLinee();
-    this.macchine = this.provider.getMacchine();
-    this.parametri = this.provider.getParametri();
+  registerCredentials = { email: '', password: '' };
+
+  constructor(public navCtrl: NavController, private auth: AuthService, private provider: MockDataProvider, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
+
   }
 
-  logForm(form: NgForm) {
-    if (form.valid) {
-      this.data = [{
-        linea: form.value.linea,
-        macchina: form.value.macchina,
-        parametri: form.value.params
-      }]
-      alert(form.value.linea)
-      alert(form.value.macchina)
-      alert(form.value.params)
-    }
+  public createAccount() {
+    this.navCtrl.push('RegisterPage');
   }
 
-  resetConverter() {
-    this.linee = null;
-    this.macchine = null;
-    this.parametri = null;
+  public login() {
+    this.showLoading()
+    this.auth.login(this.registerCredentials).subscribe(allowed => {
+        if (allowed) {
+          this.navCtrl.setRoot(HomePage);
+        } else {
+          this.showError("Access Denied");
+        }
+      },
+      error => {
+        this.showError(error);
+      });
   }
+
+  showLoading() {
+    this.loading = this.loadingCtrl.create({
+      content: 'Please wait...',
+      dismissOnPageChange: true
+    });
+    this.loading.present();
+  }
+
+  showError(text) {
+    this.loading.dismiss();
+
+    let alert = this.alertCtrl.create({
+      title: 'Fail',
+      subTitle: text,
+      buttons: ['OK']
+    });
+    alert.present();
+  }
+
+
 }

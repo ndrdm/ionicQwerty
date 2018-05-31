@@ -5,12 +5,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { Login } from '../pages/login/login';
 import { MockDataProvider } from '../providers/mock-data/mock-data';
+import {AuthService} from "../models/classes";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    Login
   ],
   imports: [
     BrowserModule,
@@ -19,13 +22,15 @@ import { MockDataProvider } from '../providers/mock-data/mock-data';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    Login
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MockDataProvider
+    MockDataProvider,
+    AuthService
   ]
 })
 export class AppModule {}
