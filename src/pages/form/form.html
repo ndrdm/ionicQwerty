@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Braford industries</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form #formget="ngForm" (ngSubmit)="addForm(formget)">
+    <ion-item>
+      <ion-label>Line</ion-label>
+      <ion-select [(ngModel)]="linea" name="linea">
+        <ion-option *ngFor="let line of lines, let i=index" [value]="line.name"> {{line.name}} </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Machine</ion-label>
+      <ion-select [(ngModel)]="macchina" name="macchina">
+        <ion-option *ngFor="let macchina of machines, let i=index" [value]="macchina.name"> {{macchina.name}} </ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Parameters</ion-label>
+      <ion-select [(ngModel)]="params" multiple="true" name="params">
+        <ion-option *ngFor="let params of parameters, let i=index" [value]="params.name"> {{params.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label>Start Date</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="startDate" name="startDate"  placeholder="default current day"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Start Time</ion-label>
+          <ion-datetime displayFormat="h:mm A" [(ngModel)]="startTime" pickerFormat="h mm A" placeholder="default current time" name="startTime"></ion-datetime>
+      </ion-item>
+
+    <ion-item>
+      <ion-label>End Date</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="endDate" placeholder="default current day" name="endDate"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>End Time</ion-label>
+        <ion-datetime displayFormat="h:mm A" [(ngModel)]="endTime" pickerFormat="h mm A" placeholder="default current time" name="endTime"></ion-datetime>
+    </ion-item>
+
+
+    <ion-item>
+    <button ion-button block type="submit"> Add params to request</button>
+    </ion-item>
+
+  </form>
+</ion-content>
