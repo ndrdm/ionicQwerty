@@ -10,6 +10,7 @@ import {HomePage} from "../pages/home/home";
 import {FormPage} from "../pages/form/form";
 
 import { Login } from '../pages/login/login';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -17,6 +18,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage:any = Login;
+
+  // make HelloIonicPage the root (or first) page
   pages: Array<{title: string, component: any}>;
 
   constructor(
