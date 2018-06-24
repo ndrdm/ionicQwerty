@@ -55,6 +55,5 @@ export class Login {
     });
     alert.present();
   }
-
-
+  
 }
