@@ -1,45 +1,14 @@
-import {Injectable} from "@angular/core";
-import {Observable} from "rxjs/Observable";
+import { Injectable } from '@angular/core';
+import {Observable} from 'rxjs/Observable';
 
-export class Line {
-  id: number;
+
+export class User {
   name: string;
-  machine: string;
-}
-
-export class Machine {
-  id: number;
-  lineId: number;
-  name: string;
-  line: string;
-  parameter: string;
-}
-
-export class Parameter {
-  id: number;
-  name: string;
-  unit: string;
-}
-
-
-export class DataForm {
-  line: string;
-  machine: string;
-  parameter: string[]
-  startDate: string;
-  startTime: string;
-  endDate: string;
-  endTime: string;
-
-}
-/*export class User {
-  id: number;
   email: string;
-  password: number;
 
-  constructor(email: string, password: number) {
+  constructor(name: string, email: string) {
+    this.name = name;
     this.email = email;
-    this.password = password;
   }
 }
 
@@ -53,8 +22,8 @@ export class AuthService {
     } else {
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
-        let access = (credentials.password === "pass" && credentials.email === "email");
-        this.currentUser = new User('saimon@devdactic.com', 4321);
+        let access = (credentials.password === "admin" && credentials.email === "admin");
+        this.currentUser = new User('admin', 'admin@qwerty.com');
         observer.next(access);
         observer.complete();
       });
@@ -78,10 +47,12 @@ export class AuthService {
   }
 
   public logout() {
+    alert(this.currentUser.name +" is logged out");
     return Observable.create(observer => {
       this.currentUser = null;
       observer.next(true);
       observer.complete();
+
     });
   }
-}*/
+}

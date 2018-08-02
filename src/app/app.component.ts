@@ -1,14 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-
-import { Platform, MenuController, Nav } from 'ionic-angular';
-
+import {Platform, MenuController, Nav, App} from 'ionic-angular';
 import { ListPage } from '../pages/list/list';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HomePage} from "../pages/home/home";
 import {FormPage} from "../pages/form/form";
-
+import { Login } from '../pages/login/login';
+import {AuthService} from "../providers/auth-service/auth-service";
+import {AlertController} from "ionic-angular";
 
 @Component({
   templateUrl: 'app.html'
@@ -17,22 +16,23 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make HelloIonicPage the root (or first) page
-  rootPage = HomePage;
+  //rootPage = HomePage;
+  rootPage:any = Login;
   pages: Array<{title: string, component: any}>;
 
   constructor(
     public platform: Platform,
     public menu: MenuController,
     public statusBar: StatusBar,
-    public splashScreen: SplashScreen
-  ) {
+    public splashScreen: SplashScreen,
+    private provider: AuthService,
+    ) {
     this.initializeApp();
     // set our app's pages
-    this.pages = [
+   this.pages = [
       { title: 'Form', component: FormPage},
       { title: 'Request List', component: ListPage },
-      { title: 'Logout', component: HomePage }
-    ];
+  ]
   }
 
   initializeApp() {
@@ -49,6 +49,14 @@ export class MyApp {
     this.menu.close();
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
+  }
+
+
+  exit(){
+    this.provider.logout();
+    this.menu.close();
+    this.nav.setRoot(this.rootPage);
+
   }
 
 
