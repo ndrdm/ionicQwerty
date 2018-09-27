@@ -32,6 +32,22 @@ export class DataForm {
   endTime: string;
 
 }
+
+export class DataValue { //simulano i dati caricati dal DB
+  date: string;
+  time: string;
+  value: number;
+
+}
+
+
+export class DataChartValue {
+
+  value: number[];
+  label: string;
+}
+
+
 /*export class User {
   id: number;
   email: string;

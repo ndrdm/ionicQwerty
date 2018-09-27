@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {DataForm, Line, Machine, Parameter} from "../../models/classes";
+import {DataForm, DataValue, Line, Machine, Parameter} from "../../models/classes";
 
 /*
   Generated class for the ProviderDataProvider provider.
@@ -123,8 +123,60 @@ export class MockDataProvider {
 
     }
 
+
   ]
 
+  dataValue : DataValue []= [
+
+    {
+      date: "08/11/2017",
+      time: "04:20:00",
+      value: 12
+    },
+
+
+    {
+
+      date: "08/11/2017",
+      time: "04:21:00",
+      value: 15
+
+    },
+
+    {
+
+      date: "08/11/2017",
+      time: "04:22:00",
+      value: 17
+
+    },
+
+    {
+
+      date: "08/11/2017",
+      time: "04:23:00",
+      value: 12
+
+    }
+  ]
+  t
+  dataChartValue:Array<any> = [
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
+    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
+  ];
+
+  dataChartTemperatura:Array<any> = [
+    {data: [60, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
+    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
+  ];
+
+  dataChartPressione:Array<any> = [
+    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
+    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
+    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
+  ];
 
 
   constructor() {
@@ -161,6 +213,15 @@ export class MockDataProvider {
 
   }
 
+
+  getDataValue(){
+    return this.dataValue;
+  }
+
+
+  getDataChartValue(){
+    return this.dataChartValue;
+  }
 
 }
 

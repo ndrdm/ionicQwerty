@@ -11,6 +11,8 @@ import { MockDataProvider } from '../providers/mock-data/mock-data';
 import {ListPage} from "../pages/list/list";
 import {AuthService} from '../providers/auth-service/auth-service';
 import {HttpClientModule} from "@angular/common/http";
+import {ChartsPage} from "../pages/charts/charts";
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import {HttpClientModule} from "@angular/common/http";
     Login,
     HomePage,
     FormPage,
-    ListPage
+    ListPage,
+    ChartsPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    ChartsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -31,7 +35,8 @@ import {HttpClientModule} from "@angular/common/http";
     HomePage,
     FormPage,
     Login,
-    ListPage
+    ListPage,
+    ChartsPage
   ],
   providers: [
     StatusBar,

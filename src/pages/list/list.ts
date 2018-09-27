@@ -20,7 +20,6 @@ export class ListPage {
   @Input() listData: DataForm[];
 
 
-
   @Output() delete= new EventEmitter<number>()
 
   constructor(public navCtrl: NavController, private provider: MockDataProvider, public alertCtrl: AlertController, public loadingCtrl: LoadingController ) {
@@ -29,7 +28,7 @@ export class ListPage {
 
   }
 
-//TODO implementare il metodo
+//TODO implementare il passaggio alla pagina "charts"
   sendQuery(){
     let loader = this.loadingCtrl.create({
       content: "Please wait...",

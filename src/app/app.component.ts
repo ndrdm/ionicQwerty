@@ -8,6 +8,7 @@ import {FormPage} from "../pages/form/form";
 import { Login } from '../pages/login/login';
 import {AuthService} from "../providers/auth-service/auth-service";
 import {AlertController} from "ionic-angular";
+import {ChartsPage} from "../pages/charts/charts";
 
 @Component({
   templateUrl: 'app.html'
@@ -32,6 +33,7 @@ export class MyApp {
    this.pages = [
       { title: 'Form', component: FormPage},
       { title: 'Request List', component: ListPage },
+      {title: 'Charts', component: ChartsPage}
   ]
   }
 
