@@ -63,7 +63,6 @@ export class FormPage {
     let endTime;
 
 
-
     if (form.value.linea!=undefined && form.value.macchina!=undefined && form.value.params!=undefined) {
 
       if(form.value.startDate==undefined){
@@ -94,13 +93,13 @@ export class FormPage {
       //moment(form.value.startTime).format('RFC3339')
 
       let newData = {
-        line: form.value.linea,
+    //    line: form.value.linea,
         machine: form.value.macchina,
         parameter: form.value.params,
-        startDate:startDate,
-        startTime:startTime,
-        endDate:endDate,
-        endTime: endTime
+      //  startDate:startDate,
+      //  startTime:startTime,
+      //  endDate:endDate,
+       // endTime: endTime
 
       }
 

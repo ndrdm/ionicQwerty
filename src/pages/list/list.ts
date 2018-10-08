@@ -16,7 +16,7 @@ import { LoadingController } from 'ionic-angular';
 export class ListPage {
 
 
-  dataMock: DataForm[];
+  dataMock:any[];
   @Input() listData: DataForm[];
 
 

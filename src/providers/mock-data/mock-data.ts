@@ -10,218 +10,229 @@ import {DataForm, DataValue, Line, Machine, Parameter} from "../../models/classe
 @Injectable()
 export class MockDataProvider {
 
-  lines: Line []= [
+  lines: Line [] = [ //SEZIONI
 
-    { id: 1,
-  name: 'Verniciatura',
-  machine: 'macchina1'
+    {
+      id: 1,
+      name: 'Sezione Verniciatura',
+      machine: 'macchina1'
     },
-    { id: 2,
-      name: 'Forno',
+    {
+      id: 2,
+      name: 'Sezione Forni',
       machine: 'macchina1'
     },
 
-    { id: 3,
-      name: 'Pompa',
+    {
+      id: 3,
+      name: 'Sezione Trasportatore',
       machine: 'macchina1'
     }
 
-    ];
+  ];
 
-  machines: Machine []= [
+  machines: Machine [] = [
 
-    { id: 1,
+    {
+      id: 1,
       lineId: 1,
-      name: 'Macchina 1 Vern.',
-      line: 'ew',
+      name: 'Verniciatura prima mano',
+      line: '1',
       parameter: "temperatura"
     },
 
-    {id: 2,
+    {
+      id: 2,
       lineId: 1,
-      name: 'Macchina 2 Vern.',
+      name: 'Verniciatura seconda mano',
       line: 'ew',
-      parameter: "temperatura"
+      parameter: "temperatura"//aggiungere umidità
     },
 
-    {id: 3,
+    {
+      id: 3,
       lineId: 2,
-      name: 'Macchina 1 Forno',
+      name: 'Forno Riscaldamento',
       line: 'ew',
-      parameter: "temperatura"
+      parameter: "temperatura" //umidità, ventilatore, amperometro
     },
 
-    {id: 4,
+    {
+      id: 4,
       lineId: 2,
-      name: 'Macchina 2 Forno',
+      name: 'Forno Cottura',
       line: 'ew',
-      parameter: "temperatura"
+      parameter: "temperatura" //umidità, ventilatore, amperometro
     },
 
-    {id: 5,
-      lineId: 3,
-      name: 'Macchina 1 Pompa',
+    {
+      id: 5,
+      lineId: 2,
+      name: 'Forno Raffreddamento',
       line: 'ew',
-      parameter: "temperatura"
+      parameter: "temperatura" //umidità, ventilatore, amperometro
     },
 
-    {id: 6,
+    {
+      id: 6,
       lineId: 3,
-      name: 'Macchina 1 Pompa',
-      line: 'ew',
-      parameter: "temperatura"
+      name: 'Carico/Scarico',
+      line: '',
+      parameter: "temperatura" //motore1, motore2
     }
   ];
 
 
-  parameters : Parameter []= [
 
-    {id: 1,
+  parameters: Parameter [] = [
+
+    {
+      id: 1,
       name: 'temperatura',
       unit: '°C'
     },
 
-    {id: 1,
+    {
+      id: 1,
       name: 'umidità',
-      unit: '°C'
+      unit: 'g/mc'
     },
-
-    {id: 2,
-      name: 'consumo',
-      unit: 'ampere'
-    },
-
-    {id: 3,
-      name: 'quantità',
-      unit: 'unità'
-    }
-
-    ]
-
-
-  dataForm : DataForm []= [
 
     {
-      line: 'prova1',
-      machine: 'Forno',
-      parameter:["1", "2"],
-      startDate:"08/11/2017",
+      id: 2,
+      name: 'amperometro',
+      unit: 'A'
+    },
+
+    {
+      id: 3,
+      name: 'quantità',
+      unit: 'num'
+    },
+
+    {
+      id: 4,
+      name: 'ventilatore',
+      unit: 'giri/min'
+    }
+
+  ]
+
+
+  dataForm: DataForm [] = [
+
+    {
+      line: 'Sezione Forni',
+      machine: 'Forno Riscaldamento',
+      parameter: ["1", "2"],
+      /*startDate: "08/11/2017",
       startTime: "04:20:00",
       endDate: "08/11/2017",
-      endTime:  "04:20:00",
+      endTime: "04:20:00",*/
     },
 
 
     {
       line: 'prova2',
       machine: 'Pompa',
-      parameter:["temperatura", "pressione"],
-      startDate:"08/11/2017" ,
+      parameter: ["temperatura", "pressione"],
+      /*startDate: "08/11/2017",
       startTime: "04:20:00",
       endDate: "08/11/2017",
-      endTime:  "04:20:00"
+      endTime: "04:20:00"*/
 
     }
 
-
   ]
 
-  dataValue : DataValue []= [
-
-    {
-      date: "08/11/2017",
-      time: "04:20:00",
-      value: 12
-    },
 
 
-    {
 
-      date: "08/11/2017",
-      time: "04:21:00",
-      value: 15
+  data=[{
+    "name":"nome",
+    value:12
 
-    },
+  }]
 
-    {
+  /*
+  data = [{
+    "name": "machine1",
+    "pressure": [
+      {value: [65, 59, 80, 81, 56, 55, 40], label: 'Sensore1'},
+      {value: [28, 48, 40, 19, 86, 27, 90], label: 'Sensore2'},
+      {value: [18, 48, 77, 9, 100, 27, 40], label: 'Sensore3'}
+    ],
+    "temperature": [
+      {value: [35, 10, 80, 81, 56, 55, 40], label: 'Sensore1'},
+      {value: [8, 11, 19, 84, 20, 10, 87], label: 'Sensore2'}
+    ],
+    "qnty": [
+      {data: [32, 48, 65, 73, 33, 11, 7], label: 'Sensore1'}
+    ],
 
-      date: "08/11/2017",
-      time: "04:22:00",
-      value: 17
-
-    },
-
-    {
-
-      date: "08/11/2017",
-      time: "04:23:00",
-      value: 12
-
+    "time": {
+      "startTIme": "",
+      "endTime": ""
     }
-  ]
-  t
-  dataChartValue:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
-  ];
+  },
+    {
+      "name": "machine2",
+      "pressure": [
+        {value: [65, 59, 80, 81, 56, 55, 40], label: 'Sensore1'},
+        {value: [28, 48, 40, 19, 86, 27, 90], label: 'Sensore2'},
+        {value: [18, 48, 77, 9, 100, 27, 40], label: 'Sensore3'}
+      ],
+      "temperature": [
+        {value: [60, 59, 80, 81, 56, 55, 40], label: 'Sensore1'},
+        {value: [60, 59, 80, 81, 56, 55, 40], label: 'Sensore2'}
+      ],
+      "piece": [
+        {data: [65, 59, 80, 81, 56, 55, 40], label: 'Sensore1'}
+      ],
 
-  dataChartTemperatura:Array<any> = [
-    {data: [60, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
-  ];
-
-  dataChartPressione:Array<any> = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
-  ];
-
+      "time": {
+        "startTIme": "",
+        "endTime": ""
+      }
+    }] */
 
   constructor() {
     console.log('Hello ProviderDataProvider Provider');
   }
 
 
-  addData(    data: DataForm){
+  addData(data: DataForm) {
     this.dataForm.push(data)
 
   }
 
-  getLinee(){
+  getLinee() {
     return this.lines;
 
   }
 
 
-  getMacchine(){
+  getMacchine() {
     return this.machines;
 
   }
 
-  getParametri(){
+  getParametri() {
     return this.parameters;
 
   }
 
+
+  getSelectedData() {
+
+  }
+
+
   getData(){
-    return this.dataForm
-  }
-
-  getSelectedData(){
-
+    return this.data
   }
 
 
-  getDataValue(){
-    return this.dataValue;
-  }
-
-
-  getDataChartValue(){
-    return this.dataChartValue;
-  }
 
 }
 

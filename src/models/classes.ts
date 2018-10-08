@@ -26,25 +26,23 @@ export class DataForm {
   line: string;
   machine: string;
   parameter: string[]
-  startDate: string;
-  startTime: string;
-  endDate: string;
-  endTime: string;
+  //startDate: string;
+  //startTime: string;
+  //endDate: string;
+  //endTime: string;
 
 }
 
 export class DataValue { //simulano i dati caricati dal DB
-  date: string;
-  time: string;
   value: number;
+  label: string;
 
 }
 
 
 export class DataChartValue {
-
   value: number[];
-  label: string;
+  time: string;
 }
 
 
