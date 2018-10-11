@@ -47,9 +47,9 @@ export class ChartsPage {
 
 
   public lineChartData4:Array<any> = [ //umidità
-    {data: [30], label: 'Forno Riscaldamento'},
-    {data: [45], label: 'Forno Cottura'},
-    {data: [20], label: 'Forno Raffreddamento'}
+    {data: [30,45, 48, 48, 48, 42, 45], label: 'Forno Riscaldamento'},
+    {data: [45,45, 48, 48, 48, 42, 45], label: 'Forno Cottura'},
+    {data: [20,45, 48, 48, 48, 42, 45], label: 'Forno Raffreddamento'}
   ];
 
   public lineChartData5:Array<any> = [ //ventilatore

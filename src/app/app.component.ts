@@ -31,9 +31,9 @@ export class MyApp {
     this.initializeApp();
     // set our app's pages
    this.pages = [
-      { title: 'Form', component: FormPage},
-      { title: 'Request List', component: ListPage },
-      {title: 'Charts', component: ChartsPage}
+      { title: 'Form ', component: FormPage},
+      { title: 'Lista Richiesta', component: ListPage },
+      {title: 'Mostra Parametri', component: ChartsPage}
   ]
   }
 

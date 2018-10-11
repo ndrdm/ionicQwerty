@@ -25,7 +25,7 @@ export class Parameter {
 export class DataForm {
   line: string;
   machine: string;
-  parameter: string[]
+  parameter: number[];
   //startDate: string;
   //startTime: string;
   //endDate: string;

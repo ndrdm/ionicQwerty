@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Bradford industries</ion-title>
+    <ion-title>Impianto Braford</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,8 +11,21 @@
   <div class="row">
     <div class="col-md-6">
       <div style="display: block;">
+        <h6> Sezione forni: temperatura (C°) </h6>
         <canvas baseChart width="300" height="400"
-                [datasets]="lineChartData1"
+                [datasets]="lineChartData3"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      <div style="display: block;">
+        <h6> umidità (g/mc)(</h6>
+        <canvas baseChart width="300" height="400"
+                [datasets]="lineChartData4"
                 [labels]="lineChartLabels"
                 [options]="lineChartOptions"
                 [colors]="lineChartColors"

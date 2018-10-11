@@ -9,9 +9,9 @@
 
 <ion-content padding="1px">
   <ion-item *ngFor="let data of dataMock; let i=index" (click)="deleteConfirm(i)">
-    <h2>Line: {{data.line}}</h2>
-    <p>Machine: {{data.machine}}</p>
-    <p>Parameters: {{data.parameter}}</p>
+    <h2>Linea: {{data.line}}</h2>
+    <p>Sezione: {{data.machine}}</p>
+    <p>Parametero: {{data.parameter}}</p>
     <!--- <p>Start Date: {{data.startDate}}</p>
     <p>Start Time: {{data.startTime}}</p>
     <p>End Date: {{data.endDate}}</p>
@@ -23,23 +23,23 @@
 
  <!-- <ion-item *ngIf="dataMock.length>0"><!-->
     <ion-item>
-      <ion-label>Start Date</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="startDate" name="startDate"  placeholder="default current day"></ion-datetime>
+      <ion-label>Data Inizio</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="startDate" name="startDate"  placeholder="default data corrente"></ion-datetime>
     </ion-item>
 
     <ion-item>
-      <ion-label>Start Time</ion-label>
-      <ion-datetime displayFormat="h:mm A" [(ngModel)]="startTime" pickerFormat="h mm A" placeholder="default current time" name="startTime"></ion-datetime>
+      <ion-label>Ora Inizio</ion-label>
+      <ion-datetime displayFormat="h:mm A" [(ngModel)]="startTime" pickerFormat="h mm A" placeholder="default ora corrente" name="startTime"></ion-datetime>
     </ion-item>
 
     <ion-item>
-      <ion-label>End Date</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="endDate" placeholder="default current day" name="endDate"></ion-datetime>
+      <ion-label>Data Fine</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="endDate" placeholder="default data corrente" name="endDate"></ion-datetime>
     </ion-item>
 
     <ion-item>
-      <ion-label>End Time</ion-label>
-      <ion-datetime displayFormat="h:mm A" [(ngModel)]="endTime" pickerFormat="h mm A" placeholder="default current time" name="endTime"></ion-datetime>
+      <ion-label>Ora Fine</ion-label>
+      <ion-datetime displayFormat="h:mm A" [(ngModel)]="endTime" pickerFormat="h mm A" placeholder="default ora corrente" name="endTime"></ion-datetime>
     </ion-item>
     <button ion-button block (click)="sendQuery(dataMock)"> Download date </button>
     <button ion-button class="button-md-danger" block (click)="deleteAll()"> Empty List </button>

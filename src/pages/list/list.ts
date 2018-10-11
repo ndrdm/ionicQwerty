@@ -16,22 +16,22 @@ import { LoadingController } from 'ionic-angular';
 export class ListPage {
 
 
-  dataMock:any[];
+  dataMock:DataForm[];
   @Input() listData: DataForm[];
 
 
   @Output() delete= new EventEmitter<number>()
 
   constructor(public navCtrl: NavController, private provider: MockDataProvider, public alertCtrl: AlertController, public loadingCtrl: LoadingController ) {
-    this.dataMock=this.provider.getData()
-
+    this.dataMock=this.provider.getDataIn()
+    console.log(this.dataMock);
 
   }
 
 //TODO implementare il passaggio alla pagina "charts"
   sendQuery(){
     let loader = this.loadingCtrl.create({
-      content: "Please wait...",
+      content: "Attendi prego...",
       duration: 3000
     });
     loader.present();
@@ -41,11 +41,11 @@ export class ListPage {
 
   deleteConfirm(index) {
     let confirm = this.alertCtrl.create({
-      title: "Delete item?",
-      message: 'Delete',
+      title: "Cancellare l'oggetto?",
+      message: 'Cancella',
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Elimina',
           handler: () => {
             console.log('Disagree clicked');
           }
@@ -65,7 +65,7 @@ export class ListPage {
 
   deleteAll(){
     let confirm = this.alertCtrl.create({
-      title: "Discard all?",
+      title: "Elimina tutto?",
       message: '',
       buttons: [
         {

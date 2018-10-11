@@ -10,6 +10,8 @@ import {DataForm, DataValue, Line, Machine, Parameter} from "../../models/classe
 @Injectable()
 export class MockDataProvider {
 
+  dataIn : DataForm[] =[];
+
   lines: Line [] = [ //SEZIONI
 
     {
@@ -33,7 +35,7 @@ export class MockDataProvider {
 
   machines: Machine [] = [
 
-    {
+  /*  {
       id: 1,
       lineId: 1,
       name: 'Verniciatura prima mano',
@@ -47,7 +49,7 @@ export class MockDataProvider {
       name: 'Verniciatura seconda mano',
       line: 'ew',
       parameter: "temperatura"//aggiungere umidità
-    },
+    },*/
 
     {
       id: 3,
@@ -73,13 +75,13 @@ export class MockDataProvider {
       parameter: "temperatura" //umidità, ventilatore, amperometro
     },
 
-    {
+    /*{
       id: 6,
       lineId: 3,
       name: 'Carico/Scarico',
       line: '',
       parameter: "temperatura" //motore1, motore2
-    }
+    }*/
   ];
 
 
@@ -119,37 +121,33 @@ export class MockDataProvider {
   ]
 
 
-  dataForm: DataForm [] = [
+  /*dataForm: DataForm [] = [
 
     {
-      line: 'Sezione Forni',
-      machine: 'Forno Riscaldamento',
-      parameter: ["1", "2"],
+      //line: 'Sezione Forni',
+      name: "Forno Riscaldamento",
+      value: ["1", "2"],
       /*startDate: "08/11/2017",
       startTime: "04:20:00",
       endDate: "08/11/2017",
-      endTime: "04:20:00",*/
+      endTime: "04:20:00",
     },
 
 
     {
-      line: 'prova2',
+      //line: 'prova2',
       machine: 'Pompa',
       parameter: ["temperatura", "pressione"],
       /*startDate: "08/11/2017",
       startTime: "04:20:00",
       endDate: "08/11/2017",
-      endTime: "04:20:00"*/
-
+      endTime: "04:20:00"
     }
 
   ]
 
-
-
-
   data=[{
-    "name":"nome",
+    name:"nome",
     value:12
 
   }]
@@ -196,15 +194,22 @@ export class MockDataProvider {
       }
     }] */
 
+
   constructor() {
     console.log('Hello ProviderDataProvider Provider');
   }
 
+  data=[{
+    line: "Linea",
+  machine: "Macchina",
+  parameter: [1,2,3,4]
 
-  addData(data: DataForm) {
+  }]
+
+ /*addData(data: DataForm) {
     this.dataForm.push(data)
 
-  }
+  } */
 
   getLinee() {
     return this.lines;
@@ -228,11 +233,20 @@ export class MockDataProvider {
   }
 
 
+
   getData(){
-    return this.data
+    return this.data;
   }
 
+  setDataIn(data: DataForm){
+    this.dataIn.push(data)
+    console.log("ADSS" + this.dataIn)
+  }
 
+  getDataIn(): DataForm[]{
+    return this.dataIn
+
+  }
 
 }
 

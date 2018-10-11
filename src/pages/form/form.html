@@ -11,21 +11,21 @@
 <ion-content padding>
   <form #formget="ngForm" (ngSubmit)="addForm(formget)">
     <ion-item>
-      <ion-label>Line</ion-label>
+      <ion-label>Linea</ion-label>
       <ion-select [(ngModel)]="linea" name="linea">
         <ion-option *ngFor="let line of lines, let i=index" [value]="line.name"> {{line.name}} </ion-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
-      <ion-label>Machine</ion-label>
+      <ion-label>Sezione</ion-label>
       <ion-select [(ngModel)]="macchina" name="macchina">
         <ion-option *ngFor="let macchina of machines, let i=index" [value]="macchina.name"> {{macchina.name}} </ion-option>
       </ion-select>
     </ion-item>
 
     <ion-item>
-      <ion-label>Parameters</ion-label>
+      <ion-label>Parametri</ion-label>
       <ion-select [(ngModel)]="params" multiple="true" name="params">
         <ion-option *ngFor="let params of parameters, let i=index" [value]="params.name"> {{params.name}}</ion-option>
       </ion-select>
@@ -33,7 +33,7 @@
 
 
     <ion-item>
-    <button ion-button block type="submit"> Add params to request</button>
+    <button ion-button block type="submit"> Richiedi visualizzazione dei dati</button>
     </ion-item>
 
   </form>
